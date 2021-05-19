@@ -14,7 +14,7 @@ class Movie{
 
         $this -> titolo = $titolo;
 
-        if($descrizione = null){
+        if($descrizione == null){
 
             $this -> descrizione = 'Nothing found';
         } else{
@@ -27,7 +27,7 @@ class Movie{
 
     public function getString(){
 
-        return "Movie title: " . $this -> titolo . "description: " . $this -> descrizione;
+        return "Movie title: " . $this -> titolo . " description: " . $this -> descrizione;
     }
 }
 
@@ -57,9 +57,11 @@ class TestController extends Controller
 
         $str = '';
 
+        /* dd($movies); */
+
         foreach ($movies as $movie){
 
-            $str .= $movie -> getString(). "\n";
+            $str .= $movie -> getString() . "\n";
         }
 
          dd($str);
